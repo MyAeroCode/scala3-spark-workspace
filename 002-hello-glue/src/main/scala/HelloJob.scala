@@ -9,8 +9,12 @@ import org.apache.spark.sql.{SQLContext}
 
 object HelloJob {
   def main(args: Array[String]) = {
-    val spark = SparkSession.builder().appName("HelloJob").getOrCreate()
-    val sparkContext: SparkContext = new SparkContext(spark.conf)
+    // val spark = SparkSession.builder().appName("HelloJob").getOrCreate()
+    val sparkContext: SparkContext = new SparkContext(
+      new SparkConf()
+      .setAppName("002-hello-glue")
+      .setMaster("local")
+    )
     val sqlContext: SQLContext = new SQLContext(sparkContext)
     val glueContext: GlueContext = new GlueContext(sparkContext)
   }
