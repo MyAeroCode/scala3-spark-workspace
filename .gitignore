@@ -1,13 +1,16 @@
+# macOS
+.DS_Store
+
+# vscode
+.vscode
+
 # metals
 .metals
+.bsp
+.bloop
 
 # sbt specific
-*/dist/*
-*/target/
-*/lib_managed/
-*/src_managed/
-*/project/boot/
-*/project/plugins/project/
-*/project/local-plugins.sbt
-*/.history
-*/.bsp
+.history
+project
+target
+chapters/*/dist
